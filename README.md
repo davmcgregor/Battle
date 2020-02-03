@@ -1,6 +1,6 @@
 ### [Makers Academy](http://www.makersacademy.com) - Week 3 Pair Programming Project
 
-# Boris-bikes ⚔️
+# Battle ⚔️
 
 [Outline](#Outline) | [Task](#Task) | [Installation Instructions](#Installation) | [Functional Description](#Functional_Description) | [Feature Tests](#Feature_Tests) | [Basic User Stories](#Basic_Stories) | [Advanced User Stories](#Extentsion_Stories) [Objects & Methods](#Methods) | [Testing](#Testing) | [Further improvements](#Further_Improvements)
 
