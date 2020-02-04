@@ -1,12 +1,8 @@
 <h1>Welcome to Battle!</h1>
 
 
-<% if @name1 %>
-<h2>Player 1 is <%= @name1 %></h2>
-<% end %>
-
-<% if @name2 %>
-<h2>Player 2 is <%= @name2 %></h2>
+<% if @name1 && @name2%>
+<h2><%= @name1 %> vs <%= @name2 %></h2>
 <% end %>
 
 <h2>Enter player names:</h1>

@@ -4,9 +4,11 @@ feature 'Testing infrastructure' do
     expect(page). to have_content 'Welcome to Battle!'
   end
 
-  # scenario 'Player 1 can fill in their name' do
-  #   visit('/')
-  #   fill_in "name", with: 'Ellie'
-  #   expect(page). to have_content 'Ellie'
-  # end
+  scenario 'Player 1 can fill in their name' do
+    visit('/')
+    fill_in "name1", with: 'Ellie'
+    fill_in "name2", with: 'David'
+    click_button 'Submit'
+    expect(page). to have_content 'Ellie vs David'
+  end
 end
