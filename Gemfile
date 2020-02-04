@@ -7,7 +7,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'capybara'
   gem 'shotgun', '0.9.2'
-  gem 'sinatra', '2.0.8.1'
+  gem 'sinatra'
   gem 'rspec'
   gem 'rubocop', '0.71.0'
   gem 'simplecov', require: false
