@@ -2,13 +2,13 @@
 
 # Battle ⚔️
 
-[Outline](#Outline) | [Task](#Task) | [Installation Instructions](#Installation) | [Functional Description](#Functional_Description) | [Feature Tests](#Feature_Tests) | [Basic User Stories](#Basic_Stories) | [Advanced User Stories](#Extentsion_Stories) [Objects & Methods](#Methods) | [Testing](#Testing) | [Further improvements](#Further_Improvements)
+[Outline](#Outline) | [Task](#Task) | [Installation Instructions](#Installation) | [Functional Description](#Functional_Description) | [User Stories](#User_Stories) | [Objects & Methods](#Methods) | [Testing](#Testing) | [Further improvements](#Further_Improvements)
 
-![battle](https://miro.medium.com/max/768/0*FCn1bE55G4IVyqag.png)
+![battle](battle.jpg)
 
 ## <a name="Task">The Task</a>
 
-Write a 'Battle' program that takes player names as input, allows players to attack and reduce hit points from one another. The game should annouce a loser if their hit points reach 0.
+Write a 'Battle' simulator using a basic project structure with Sinatra, RSpec, and Capybara. The program should allow suer to input player names, attack each other and reduce hit points. The game should annouce a loser if their hit points reach 0.
 
 This challenge is the third pair programming challenge at [Makers Academy](https://github.com/makersacademy).
 
@@ -29,15 +29,22 @@ $ bundle
 $ rspec
 $ rubocop
 ```
-4. Run the app on a local server and play on http://localhost:4567/
+4. Run the app on a local server and play on the broswer: http://localhost:4567/
 
 ```Shell
-$ rackup config.ru -p 4567
+$ ruby app.rb -p 4567
 ```
 
-## <a name="Feature_Tests">Feature Tests (How it works)</a>
+## <a name="Functional_Descriptions">Functional Descriptions</a>
 
-## <a name="Basic_Stories">Basic User Stories</a>
+The system's functionality includes:
+
+* Two __players__ can fill and __submit__ a form to display their names.
+* A player can click __attack__ to reduce __hit points__ from another player if it is their turn.
+* A player can click __OK__ after their attack to switch turns.
+* A __loser__ will be announced if their __hit points__ reach 0.
+
+## <a name="User_Stories">User Stories</a>
 ```
 As two Players,
 So we can play a personalised game of Battle,
@@ -86,7 +93,47 @@ I want to see a 'Lose' message if I reach 0HP first
 
 ## <a name="Methods">Objects & Methods</a>
 
+For the user stories I created a domain model for each object, including attributes and behaviour:
+
+### Attack
+
+| Methods | Description |
+| --- | --- |
+| initialize(player)| Creates a new instance of Attack and sets a player instance variable |
+| .self.run(player) | Instance method applies 'run' on player argument |
+| run | Applies 'receive_damage' to player variable |
+
+### Game
+
+| Methods | Description |
+| --- | --- |
+| self.create(player_1, player_2) | Class method that creates a game with two players |
+| .self.instance | Class method that returns the game class instance variable  |
+| initialize(player_1, player_2) | Sets two instance variables: players array and current turn  |
+| player_1 | Returns the first player in the players array |
+| player_2 | Returns the last player in the players array |
+| switch_turns | |
+| opponent_of(player) | changes the current turn variable using the players_who_are_not(player) method |
+| game_over? | returns players using the losing_players method |
+| loser | returns the first losing_player |
+| losing_players | private method that selects any player with 0 hit points |
+| players_who_are_not(the_player) | returns player that is not the player passed in as an argument |
+
+### Player
+
+| Methods | Description |
+| --- | --- |
+| initialize(name, hit_points = DEFAULT_HIT_POINTS) |  Sets instance vaiables name and hit points at a default of 100 |
+| receive_damage | Reduces the hit points variable by 10 |
+
 ## <a name="Testing">Testing</a>
+
+Tests were written with RSpec and Capybara. To run the tests in terminal: 
+
+```bash
+$> cd Battle
+$> rspec
+```
 
 ## <a name="Further_Improvements">Further Improvements</a>
 
