@@ -4,11 +4,36 @@
 
 [Outline](#Outline) | [Task](#Task) | [Installation Instructions](#Installation) | [Functional Description](#Functional_Description) | [Feature Tests](#Feature_Tests) | [Basic User Stories](#Basic_Stories) | [Advanced User Stories](#Extentsion_Stories) [Objects & Methods](#Methods) | [Testing](#Testing) | [Further improvements](#Further_Improvements)
 
-## <a name="Outline">Outline</a>
+![battle](https://miro.medium.com/max/768/0*FCn1bE55G4IVyqag.png)
 
 ## <a name="Task">The Task</a>
 
+Write a 'Battle' program that takes player names as input, allows players to attack and reduce hit points from one another. The game should annouce a loser if their hit points reach 0.
+
+This challenge is the third pair programming challenge at [Makers Academy](https://github.com/makersacademy).
+
 ## <a name="Installation">Installation Instructions</a>
+
+1. Fork this repository, clone to your local machine then change into the directory:
+```
+$ git clone git@github.com:davmcgregor/Battle.git
+$ cd Battle
+```
+2. Load dependencies with bundle:
+```
+$ gem install bundle
+$ bundle
+```
+3. Run Rspec for tests and coverage, then rubocop for linting
+```
+$ rspec
+$ rubocop
+```
+4. Run the app on a local server and play on http://localhost:4567/
+
+```Shell
+$ rackup config.ru -p 4567
+```
 
 ## <a name="Feature_Tests">Feature Tests (How it works)</a>
 
@@ -59,7 +84,14 @@ So I can Lose a game of Battle,
 I want to see a 'Lose' message if I reach 0HP first
 ```
 
-## <a name="Extension_Stories">Advanced User Stories</a>
+## <a name="Methods">Objects & Methods</a>
+
+## <a name="Testing">Testing</a>
+
+## <a name="Further_Improvements">Further Improvements</a>
+
+Test and implement these Extension Stories:
+
 ```
 As a Player,
 So I can play a suspenseful game of Battle,
@@ -100,10 +132,3 @@ As a Player,
 So I can enjoy my game of Battle,
 I want a sexy user interface
 ```
-
-## <a name="Methods">Objects & Methods</a>
-
-## <a name="Testing">Testing</a>
-
-## <a name="Further_Improvements">Further Improvements</a>
-
